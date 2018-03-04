@@ -68,6 +68,7 @@ bot.on('messageDelete', message => {
         .addField('Message Author', message.author.tag, true)
         .addField('Message ID', message.id, true)
         .setDescription(`**Message Content:**\n"${message.content}"`)
+        moonlogs.send(embed)
 
     }
 
