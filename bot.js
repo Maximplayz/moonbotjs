@@ -51,4 +51,26 @@ bot.on('message', message => {
     
 });
 
+bot.on('messageDelete', message => {
+
+    let moonlogs = message.guild.channels.find('name', 'moonlogs')
+
+    if (!moonlogs) {
+        
+        message.guild.createChannel('moonlogs','text')
+        
+
+    } else {
+
+        const embed = new Discord.RichEmbed()
+        .setColor('00ff00')
+        .setTitle('Message Deleted')
+        .addField('Message Author', message.author.tag, true)
+        .addField('Message ID', message.id, true)
+        .setDescription(`**Message Content:**\n"${message.content}"`)
+
+    }
+
+});
+
 bot.login(process.env.BOT_TOKEN);
