@@ -27,8 +27,8 @@ fs.readdir("./commands", (err, file) => {
 
 bot.on('ready', () => {
 
-    bot.user.setActivity('your messages','WATCHING')
-    bot.user.setStatus('dnd')
+    bot.user.setActivity('Type: moon.help')
+    bot.user.setStatus('online')
    
     var mb = memory();
 
