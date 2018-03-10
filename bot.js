@@ -36,6 +36,18 @@ bot.on('ready', () => {
     console.log(`Current Memory usage ${mb}mb`)
     console.log(' ')
 
+    let ghserv = bot.guilds.find('id', '349930951708770305')
+    let ghlog = ghserv.channels.find('name', 'moonlogs')
+    let REmbed = new Discord.RichEmbed()
+    .setTitle('Bot Restarted & Updated')
+    .setColor('1E90FF')
+    .addField('Ready At', bot.readyAt, true)
+    .addField('Ready At (Timestamp)', bot.readyTimestamp, true)
+    .addField('Current Ping', math.round(bot.ping))
+    .addField('Memory Usage', `${mb}mb`)
+    ghlog.send(embed)
+
+
 });
 
 bot.on('message', message => {
