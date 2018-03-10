@@ -58,12 +58,20 @@ bot.on('messageDelete', message => {
     if (!moonlogs) {
         
         message.guild.createChannel('moonlogs','text')
+         const embed = new Discord.RichEmbed()
+        .setColor('ff0000')
+        .setTitle('Message Deleted')
+        .addField('Message Author', message.author.tag, true)
+        .addField('Message ID', message.id, true)
+        .addField('Message Channel', `#${message.channel.name} **(${message.channel.id})**`)
+        .setDescription(`**Message Content:**\n"${message.content}"`)
+        moonlogs.send(embed)
         
 
     } else {
 
         const embed = new Discord.RichEmbed()
-        .setColor('00ff00')
+        .setColor('ff0000')
         .setTitle('Message Deleted')
         .addField('Message Author', message.author.tag, true)
         .addField('Message ID', message.id, true)
@@ -72,6 +80,64 @@ bot.on('messageDelete', message => {
         moonlogs.send(embed)
 
     }
+
+});
+
+bot.on('guildMemberAdd', member =>{
+
+    let moonlogs = message.guild.channels.find('name', 'moonlogs')
+
+    if (!moonlogs) {
+        
+        const embed = new Discord.RichEmbed()
+        .setColor('00ff00')
+        .setTitle('Member Joined Guild')
+        .addField('Member Tag', `${member.tag}`, true)
+        .addField('Member ID', `${member.id}`, true)
+        .addField('Date', `${member.joinedAt}`)
+        moonlogs.send(embed)
+        
+
+    } else {
+
+        const embed = new Discord.RichEmbed()
+        .setColor('00ff00')
+        .setTitle('Member Joined Guild')
+        .addField('Member Tag', `${member.tag}`, true)
+        .addField('Member ID', `${member.id}`, true)
+        .addField('Date', `${member.joinedAt}`)
+        moonlogs.send(embed)
+
+    }
+
+});
+
+bot.on('guildMemberRemove', member =>{
+
+    let moonlogs = message.guild.channels.find('name', 'moonlogs')
+
+    if (!moonlogs) {
+        
+        const embed = new Discord.RichEmbed()
+        .setColor('ff0000')
+        .setTitle('Member Left Guild')
+        .addField('Member Tag', `${member.tag}`, true)
+        .addField('Member ID', `${member.id}`, true)
+        .addField('Date', `${member.joinedAt}`)
+        moonlogs.send(embed)
+        
+
+    } else {
+
+        const embed = new Discord.RichEmbed()
+        .setColor('ff0000')
+        .setTitle('Member Left Guild')
+        .addField('Member Tag', `${member.tag}`, true)
+        .addField('Member ID', `${member.id}`, true)
+        .addField('Date', `${member.joinedAt}`)
+        moonlogs.send(embed)
+
+    } 
 
 });
 
