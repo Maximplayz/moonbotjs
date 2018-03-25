@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
 
     	if (args[0] === 'general') {
-            message.channel.send('__**General Commands**__\n\n``moon.userinfo <mention>`` => **Shows info about the Mentioned user.**\n``moon.weather <city>`` => **Shows weather for a specific City**\n``moon.shorten <url> [title]`` => **Shortens a URL with optional title**\n``moon.ping`` => **Shows the bots ping + memory usage**')
+            message.channel.send('__**General Commands**__\n\n``moon.userinfo <mention>`` => **Shows info about the Mentioned user.**\n``moon.weather <city>`` => **Shows weather for a specific City**\n``moon.shorten <url> [title]`` => **Shortens a URL with optional title**\n``moon.ping`` => **Shows the bots ping + memory usage**\n``moon.northbear`` => **idek**')
         } else if (args[0] === 'botowner') {
             message.channel.send('__**Bot Owner Only Commands**__\n\n``moon.die`` => **Terminates connection to discord**\n``moon.hook <title> <message> [color] [avatar]`` => **Creates a Webhook**\n``moon.eval <code>`` => **Evaluates Javascript Code**\n``moon.username <new_name>`` => **Changes the Bots Global Username**\n``moon.game <game>`` => **Changes Bots playing status on all shards**')
         } else {

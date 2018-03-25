@@ -40,6 +40,14 @@ bot.on('ready', () => {
 
 });
 
+bot.on('guildCreate', guild => {
+
+    let DFCHL = guild.defaultChannel;
+    
+    DFCHL.send('whoever add me, fuck you')
+
+})
+
 bot.on('message', message => {
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return;
